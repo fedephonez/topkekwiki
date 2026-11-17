@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>topkek.wiki</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+    }
+    #wall {
+      position: fixed;
+      inset: -1em;
+      font: 700 clamp(28px, 6vw, 64px)/1.1 "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+      font-stretch: condensed;
+      color: #c9a866;
+      white-space: nowrap;
+      overflow: hidden;
+      user-select: none;
+      z-index: 0;
+    }
+    main {
+      position: relative;
+      z-index: 1;
+      height: 100dvh;
+      display: grid;
+      place-items: center;
+    }
+    .video {
+      width: min(90vw, 960px);
+      aspect-ratio: 16 / 9;
+      background: #000;
+      box-shadow: 0 0 60px #000;
+    }
+    .video iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="wall" aria-hidden="true"></div>
+
+  <main>
+    <div class="video">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/QF_C4fTWais"
+        title="topkek"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  </main>
+
+  <script>
+    // Täyttää taustan [WIKI] [SOON] -seinällä
+    const wall = document.getElementById('wall');
+    const line = '[WIKI] [SOON] '.repeat(40);
+    wall.innerHTML = Array(60).fill(line).join('<br>');
+  </script>
+</body>
+</html>
